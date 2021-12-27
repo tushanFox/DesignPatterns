@@ -1,7 +1,7 @@
 /**
- * @file Operation.cpp
+ * @file operation.cpp
  * @author tushanFox (tushanFox@outlook.com)
- * @brief 简单工厂模式，又称为静态工厂方法模式。这里以“计算器”举例：由工厂类创建出加/减/乘/除的产品类。
+ * @brief 简单工厂模式，又称为静态工厂方法模式。以“计算器”举例：由工厂类创建出加/减/乘/除的产品类。
  * @version 0.1
  * @date 2021-12-23
  * 

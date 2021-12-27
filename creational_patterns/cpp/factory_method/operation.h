@@ -1,7 +1,7 @@
 /**
- * @file Operation.h
+ * @file operation.h
  * @author tushanFox (tushanFox@outlook.com)
- * @brief 工厂方法模式又称为工厂模式。这里以“计算器”举例：
+ * @brief 工厂方法模式又称为工厂模式。以“计算器”举例：
  *        由抽象工厂类创建出抽象产品类，由具体工厂类创建加/减/乘/除的产品类。
  * @version 0.1
  * @date 2021-12-26

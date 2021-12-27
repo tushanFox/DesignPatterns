@@ -1,7 +1,7 @@
 /**
  * @file operation.go
  * @author tushanFox (tushanFox@outlook.com)
- * @brief 简单工厂模式，以“计算器”举例。
+ * @brief 工厂方法模式，以“计算器”举例。
  * @version 0.1
  * @date 2021-12-27
  * 
@@ -16,8 +16,8 @@ type Operation interface {
 	SetValue2(float64)
 	GetResult() float64
 }
-
-// 运算基类，封装公共方法
+ 
+// 具体产品的基结构体，封装公共方法
 type OperBase struct {
 	v1 float64
 	v2 float64
@@ -67,28 +67,44 @@ func (o *OperDiv) GetResult() float64 {
 	return o.v1 / o.v2
 }
 
-// 工厂结构体的实现
-type OperationFactory struct {}
+//////// 工厂接口和结构体
+// 工厂接口
+type OperationFactory interface {
+	CreateProduct() Operation
+}
 
-func (o *OperationFactory) CreateProduct(op string) Operation {
-	switch op {
-	case "ADD":
-		return &OperAdd{
-			OperBase: &OperBase{},
-		}
-	case "SUB":
-		return &OperSub{
-			OperBase: &OperBase{},
-		}
-	case "MUL":
-		return &OperMul{
-			OperBase: &OperBase{},
-		}
-	case "DIV":
-		return &OperDiv{
-			OperBase: &OperBase{},
-		}
-	default:
-		return nil	
+// 工厂产品(加法)的实现
+type AddFactory struct {}
+
+func (a *AddFactory) CreateProduct() Operation {
+	return &OperAdd{
+		OperBase: &OperBase{},
+	}
+}
+
+// 工厂产品(加法)的实现
+type SubFactory struct {}
+
+func (s *SubFactory) CreateProduct() Operation {
+	return &OperSub{
+		OperBase: &OperBase{},
+	}
+}
+
+// 工厂产品(乘法)的实现
+type MulFactory struct {}
+
+func (m *MulFactory) CreateProduct() Operation {
+	return &OperMul{
+		OperBase: &OperBase{},
+	}
+}
+
+// 工厂产品(除法)的实现
+type DivFactory struct {}
+
+func (d *DivFactory) CreateProduct() Operation {
+	return &OperDiv{
+		OperBase: &OperBase{},
 	}
 }
