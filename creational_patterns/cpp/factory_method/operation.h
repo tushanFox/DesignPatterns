@@ -1,25 +1,48 @@
 /**
  * @file Operation.h
  * @author tushanFox (tushanFox@outlook.com)
- * @brief 简单工厂模式，又称为静态工厂方法模式。这里以“计算器”举例：由工厂类创建出加/减/乘/除的产品类。
+ * @brief 工厂方法模式又称为工厂模式。这里以“计算器”举例：
+ *        由抽象工厂类创建出抽象产品类，由具体工厂类创建加/减/乘/除的产品类。
  * @version 0.1
- * @date 2021-12-23
+ * @date 2021-12-26
  * 
  * @copyright Copyright (c) 2021
  * 
  */
 #pragma once
-enum Operator {
-  OPER_ADD = 1,
-  OPER_SUB = 2,
-  OPER_MUL = 3,
-  OPER_DIV = 4
-};
+
 class Operation;
-// 工厂类
-class OperationFactory {
+// 抽象工厂类
+class IFactory {
 public:
-  static Operation *CreateProduct(Operator op);
+  IFactory() = default;
+  virtual ~IFactory() = default;
+  virtual Operation *CreateOperation() = 0;
+};
+
+// 具体工厂类：加/减/乘/除分别有不同的具体工厂类
+// 加法工厂类
+class AddFactory : public IFactory {
+ public:
+  Operation *CreateOperation() override;
+};
+
+// 减法工厂类
+class SubFactory : public IFactory {
+ public:
+  Operation *CreateOperation() override;
+};
+
+// 乘法工厂类
+class MulFactory : public IFactory {
+ public:
+  Operation *CreateOperation() override;
+};
+
+// 加法工厂类
+class DivFactory : public IFactory {
+ public:
+  Operation *CreateOperation() override;
 };
 
 // 运算基类
