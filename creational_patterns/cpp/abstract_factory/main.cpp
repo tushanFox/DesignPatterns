@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 #include "computer.h"
 using namespace std;
 int main() {
