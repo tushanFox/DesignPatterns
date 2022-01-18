@@ -1,5 +1,5 @@
 /**
- * @file decorator.cpp
+ * @file decorator.go
  * @author tushanFox (tushanFox@outlook.com)
  * @brief 装饰器模式
  * @version 0.1
