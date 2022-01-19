@@ -1,5 +1,5 @@
 /**
- * @file adapter.h
+ * @file adapter.go
  * @author tushanFox (tushanFox@outlook.com)
  * @brief 适配器模式：A需要调用B，但是A/B之间协议不通，于是增加C。由C直接调用B，并且C提供A需要的接口。
  *        比如，读卡器把作为电脑和SD卡之间的适配器。
