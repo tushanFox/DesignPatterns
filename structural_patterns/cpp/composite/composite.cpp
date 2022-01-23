@@ -1,7 +1,7 @@
 /**
  * @file composite.cpp
  * @author tushanFox (tushanFox@outlook.com)
- * @brief 
+ * @brief 组合模式
  * @version 0.1
  * @date 2022-01-20
  * 
